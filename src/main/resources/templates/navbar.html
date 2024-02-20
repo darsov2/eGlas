@@ -1,0 +1,64 @@
+<nav class="navbar bg-body-tertiary ">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Почетна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Излезност</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Гласање</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="https://develop.finki.ukim.mk/projects/eGlas/raw-attachment/wiki/WikiStart/logo.png"
+                 width="50"
+                 height="auto"/>
+        </a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+             aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Мени</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/admin/units">Изборни единици</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/stations">Гласачки места</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/address">Адреси</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/citizens">Избирачки список</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Кандидатури</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Избори
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Типови избори</a></li>
+                            <li><a class="dropdown-item" href="#">Реализации на избори</a></li>
+                            <li><a class="dropdown-item" href="#">Внес на кандидати</a></li>
+                            <li><a class="dropdown-item" href="#">Приговори</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
