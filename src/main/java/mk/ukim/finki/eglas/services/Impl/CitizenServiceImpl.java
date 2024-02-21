@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CitizenServiceImpl implements CitizenService {
@@ -54,6 +55,7 @@ public class CitizenServiceImpl implements CitizenService {
 
     @Override
     public Citizen findByIdNum(String idNum) {
+//        Optional<Citizen> orel = citizenRepository.findByIdNum(idNum);
         return citizenRepository.findByIdNum(idNum).orElseThrow(() -> new RuntimeException("Citizen with given id number not found"));
     }
 
@@ -62,6 +64,8 @@ public class CitizenServiceImpl implements CitizenService {
     {
         try {
             Citizen citizen = findByIdNum(idNum);
+            String ds = citizen.getDocument().getDocumentNumber();
+            Boolean orel = citizen.getDocument().getDocumentNumber().equals(documentNumber);
             return citizen.getDocument().getDocumentNumber().equals(documentNumber) ? citizen : null;
         }
         catch (Exception ex)

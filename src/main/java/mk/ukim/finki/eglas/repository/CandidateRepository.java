@@ -13,6 +13,6 @@ import java.lang.annotation.Native;
 public interface CandidateRepository extends JpaRepository<Candidate, Long> {
     @Modifying
     @Transactional
-    @Query(value = "insert into candidate (id) values (:id)", nativeQuery = true)
+    @Query(value = "insert into kandidati (g_id) values (:id)", nativeQuery = true)
     void insertCandidate(@Param("id") Long id);
 }

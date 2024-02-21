@@ -10,6 +10,6 @@ import org.springframework.data.repository.query.Param;
 public interface CommitteeMemberRepository extends JpaRepository<CommitteeMember, Long> {
     @Modifying
     @Transactional
-    @Query(value = "insert into committee_member (id) values (:id)", nativeQuery = true)
+    @Query(value = "insert into clenovi_na_komisija (g_id) values (:id)", nativeQuery = true)
     void insertCommitteeMember(@Param("id") Long id);
 }

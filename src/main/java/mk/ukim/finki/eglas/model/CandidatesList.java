@@ -9,16 +9,26 @@ import java.util.List;
 
 @Entity
 @Data
+@Table(name = "kandidatski_listi")
 public class CandidatesList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "kl_id")
     Long id;
+    @Column(name = "kl_opis")
     String description;
     @ManyToMany
+    @JoinTable(name = "e_kandidat_vo", joinColumns = {@JoinColumn(name = "kl_id")},inverseJoinColumns = {@JoinColumn(name = "g_id")})
     List<Candidate> candidates;
     @ManyToOne
+    @JoinColumn(name = "ri_id")
     CandidatesListElectionRealization candidatesListElectionRealization;
-
+    @ManyToOne
+    @JoinColumn(name = "ie_id")
+    ElectoralUnit electoralUnit;
+    @ManyToOne
+    @JoinColumn(name = "p_id")
+    Party party;
     public CandidatesList(){
         this.candidates = new ArrayList<>();
     }

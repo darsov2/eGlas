@@ -1,17 +1,16 @@
 package mk.ukim.finki.eglas.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
-// Jovan
+@Table(name = "opstini")
 public class Municipality {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "o_id")
     Long id;
+    @Column(name = "o_ime")
     String name;
 }

@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 public interface CandidacyVoteRepository extends JpaRepository<CandidacyVote, Long> {
     @Modifying
     @Transactional
-    @Query(value = "insert into candidacy_vote (id, candidacy_id) values (:voteId, :candidacyId)", nativeQuery = true)
+    @Query(value = "insert into glasovi_za_kandidat (ug_id, kan_id) values (:voteId, :candidacyId)", nativeQuery = true)
     void voteForCandidate(@Param("voteId") Long voteId,
                           @Param("candidacyId") Long candidacyId);
 }

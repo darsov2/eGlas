@@ -1,15 +1,14 @@
 package mk.ukim.finki.eglas.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrimaryKeyJoinColumn;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Data
 //@PrimaryKeyJoinColumn
+@Table(name = "glasovi_za_lista")
 public class CandidatesListVote extends Vote{
     @ManyToOne
+    @JoinColumn(name = "kl_id")
     CandidatesList candidatesList;
 }

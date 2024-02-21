@@ -10,6 +10,6 @@ import org.springframework.data.repository.query.Param;
 public interface CandidatesListElectionRealizationRepository extends JpaRepository<CandidatesListElectionRealization, Long> {
     @Modifying
     @Transactional
-    @Query(value = "insert into candidates_list_election_realization (id) values (:id)", nativeQuery = true)
+    @Query(value = "insert into realizacii_so_kandidatska_lista (ri_id) values (:id)", nativeQuery = true)
     void insertCandidateListElections(@Param("id") Long id);
 }

@@ -14,7 +14,7 @@ import java.util.List;
 public interface CandidatesElectionRealizationRepository extends JpaRepository<CandidatesElectionRealization, Long> {
     @Modifying
     @Transactional
-    @Query(value = "insert into candidates_election_realization (id) values (:id)", nativeQuery = true)
+    @Query(value = "insert into realizacii_so_kandidaturi (ri_id) values (:id)", nativeQuery = true)
     void insertCandidacyElections(@Param("id") Long id);
 
 //    @Query(value = "select distinct elections from CandidatesElectionRealization elections join Candidacy candidacy on candidacy.candidatesElectionRealization = elections left join Vote vote on vote.electionRealization = elections and vote.citizen != :citizen where elections.date >= current_date and (vote.citizen is null or vote.citizen != :citizen) and (candidacy.municipality is null or candidacy.municipality = :municipality)")

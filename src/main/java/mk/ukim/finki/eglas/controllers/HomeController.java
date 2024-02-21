@@ -457,7 +457,7 @@ public class HomeController {
                                  @RequestParam(required = false, defaultValue = "2") Long realizationId) {
         Double turnOut = voteService.turnOutByElectionRealization(realizationId);
         m.addAttribute("replaceTemplate", "turnout_circle");
-        m.addAttribute("turnoutPercentage", turnOut);
+        m.addAttribute("turnoutPercentage", String.format("%.1f", turnOut));
         m.addAttribute("realizationId", realizationId);
         m.addAttribute("municipalities", municipalityService.findAll());
         m.addAttribute("realizations", candidatesElectionRealizationService.findAll());
